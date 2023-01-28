@@ -19,12 +19,31 @@ const {
 
 
     function handleAudioClick(e) {
+
+        handleKeyClick(e);
+
         const audio = e.target.querySelector('.clip');
         handleDisplay(e.target.id)
         audio.play();
+        e.target.blur();
 
     }
 
+    function handleKeyClick(e) {
+        const keyClick = document.getElementById(e.target.id);
+        keyClick.classList.add("drum-pad-active")
+        setTimeout(function() {
+            keyClick.classList.remove("drum-pad-active");
+          }, 100);
+    }
+
+    function handleKeyPress(clipWithId) {
+        const keyPress = document.getElementById(clipWithId);
+        keyPress.classList.add("drum-pad-active")
+        setTimeout(function() {
+            keyPress.classList.remove("drum-pad-active");
+          }, 100);
+    }
 
     useEffect(() => {
 
@@ -33,38 +52,47 @@ const {
             switch(e.key.toUpperCase()) {
                 case 'Q':
                     handleDisplay(clipQ.id)
+                    handleKeyPress(clipQ.id)
                     document.querySelector("#Q").play();
                     break;
                 case 'W':
                     handleDisplay(clipW.id)
+                    handleKeyPress(clipW.id)
                     document.querySelector("#W").play();
                     break;
                 case 'E':
                     handleDisplay(clipE.id)
+                    handleKeyPress(clipE.id)
                     document.querySelector("#E").play();
                     break; 
                 case 'A':
                     handleDisplay(clipA.id)
+                    handleKeyPress(clipA.id)
                     document.querySelector("#A").play();
                     break;
                 case 'S':
                     handleDisplay(clipS.id)
+                    handleKeyPress(clipS.id)
                     document.querySelector("#S").play();
                     break;
                 case 'D':
                     handleDisplay(clipD.id)
+                    handleKeyPress(clipD.id)
                     document.querySelector("#D").play();
                     break;
                 case 'Z':
                     handleDisplay(clipZ.id)
+                    handleKeyPress(clipZ.id)
                     document.querySelector("#Z").play();
                     break;
                 case 'X':
                     handleDisplay(clipX.id)
+                    handleKeyPress(clipX.id)
                     document.querySelector("#X").play();
                     break;
                 case 'C':
                     handleDisplay(clipC.id)
+                    handleKeyPress(clipC.id)
                     document.querySelector("#C").play();
                     break;
                 default:

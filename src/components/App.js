@@ -16,6 +16,7 @@ const [clipX, setClipX] = useState({ id: "Kick", audioClip: "https://s3.amazonaw
 const [clipC, setClipC] = useState({ id: "Closed HH", audioClip: "https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3"})
 const [display, setDisplay] = useState("  ")
 
+
 function handleToggle() {
   if (clipQ.audioClip === "https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3") {
     setClipQ({ id: "Chord 1", audioClip: "https://s3.amazonaws.com/freecodecamp/drums/Chord_1.mp3"})
@@ -40,10 +41,10 @@ function handleToggle() {
   }
 }
 
-
 function handleDisplay(id) {
   setDisplay(id)
 }
+
 
 
   return (
@@ -61,6 +62,7 @@ function handleDisplay(id) {
         handleToggle={handleToggle}
         handleDisplay={handleDisplay}
         display={display}
+
       />
     </div>
   );

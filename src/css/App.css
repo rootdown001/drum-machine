@@ -70,6 +70,11 @@ table {
 
 }
 
+.drum-pad-active {
+  outline: 5px solid hsl(214, 27%, 50%);
+  background-color: hsl(214, 27%, 50%);
+}
+
 .controls {
 
   border: 2px solid hsl(214, 27%, 50%);
